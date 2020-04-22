@@ -15,10 +15,11 @@ public class Denomination {
         moneyTrack[0] = 0;
 
 
-        for (int money = 1; money <= targetMoney; money++) {
-            for (int coinIdx = 0; coinIdx < denominations.length; coinIdx++) {
-                if (denominations[coinIdx] <= money) {
-                    moneyTrack[money] = Math.min(moneyTrack[money], moneyTrack[money - denominations[coinIdx]] + 1);
+        for (int amount = 1; amount <= targetMoney; amount++) {
+
+            for (int denomination : denominations) {
+                if (denomination <= amount) {
+                    moneyTrack[amount] = Math.min(moneyTrack[amount], moneyTrack[amount - denomination] + 1);
                 }
             }
         }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(StringManipulations[] args) {
+    public static void main(String[] args) {
         int sum = 2 + 3;
         System.out.println(Integer.toString(sum).length());
     }
