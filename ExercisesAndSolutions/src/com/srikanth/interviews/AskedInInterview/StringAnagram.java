@@ -8,8 +8,8 @@ import java.util.Map;
 public class StringAnagram {
 
     public static void main(String[] args) {
-        String s1 = "rat";
-        String s2 = "art";
+        String s1 = "anagram";
+        String s2 = "margana";
         System.out.println(isAnagram(s1, s2));
 
         // how to check Strings with special symbols
