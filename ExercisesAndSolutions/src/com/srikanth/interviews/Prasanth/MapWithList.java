@@ -49,7 +49,20 @@ public class MapWithList {
             System.out.println("Enter comma separated elements: "); // example: scoda,bmw,suzuki
             String list = scan.next();
 
-            // TODO Your work here to populate the map "result"
+            // list is of type String. But map take values as ArrayList.
+            // Define an array list
+            ArrayList<String> inputList = new ArrayList<>();
+
+            // input is comma separated values. So splitting them to an array. Ex: "scoda,bmw,suzuki" becomes ["scoda", "bmw", "suzuki"]
+            String[] inputArray = list.split(",");
+
+            // add each input to array list
+            for (String input : inputArray) {
+                inputList.add(input);
+            }
+
+            // now add the array list to category key in map
+            result.put(category, inputList); // cars: ["scoda", "bmw", "suzuki"]
         }
 
         printFirstResult(result);
@@ -57,9 +70,19 @@ public class MapWithList {
     }
 
     static void printFirstResult(Map<String, ArrayList<String>> result) {
-        System.out.println("done");
+
         // TODO Print the first element of every category
         // Example: scoda from example given in line 31 above
+        for (String category : result.keySet()) {
+            // now value for this category key will be in array list format
+            ArrayList<String> value = result.get(category);
+            // Print key and first element
+            System.out.println(category + ": " + value.get(0));
+
+            // the 2 lines above can be written as follows
+            // System.out.println(category + ": " + result.get(category).get(0));
+        }
+
     }
 
 }
